@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<body style="background-color:gray;">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>
+	<i>
+        Hotel-crud-operation
+	</i>
+    </h1>
+
+</head>
+<table style="background-color:gray"> 
+<body>
+<form method="post" th:action="@{/hotels}" th:object="${hotel}">
+    <label><b>ID: </b></label>
+    <input type="text" name="id" th:field="${hotel.id}">  <br><br>
+
+    <label><b>Code:  </b></label> 
+    <input type="text" name="code" th:field="${hotel.code}"> <br><br>
+
+    <label><b>Name: </b></label>
+    <input type="text" name="name" th:field="${hotel.name}" > <br><br>
+	
+	<label><b>HotelType: </b></label>
+    <input type="text" name="hotelType" th:field="${hotel.hotelType}" > <br><br>
+	
+	<label><b>Email: </b></label>
+    <input type="text" name="email" th:field="${hotel.email}" > <br><br>
+	
+	<label><b>Mobile: </b></label>
+    <input type="text" name="mobile" th:field="${hotel.mobile}"> <br><br>
+
+    <input type="submit" name="save" align="right"> <br>
+	
+</form>
+</body>
+</html>

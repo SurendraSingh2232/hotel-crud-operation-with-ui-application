@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<bold>
+<button><a th:href="@{/hotels}">Add Hotel</a></button><br>
+</bold>
+<table border="2px">
+
+	<thead>
+	<tr>
+		<th>Id</th>
+		<th>Code</th>
+		<th>Name</th>
+		<th>Hotel Type</th>
+		<th>Email</th>
+		<th>Mobile</th>
+		<th>Action</th>
+
+	</tr>
+
+	</thead>
+	<tbody>
+	<tr th:each="hotel:${hotels}">
+
+		<td th:text="${hotel.id}"></td>
+		<td th:text="${hotel.code}"></td>
+		<td th:text="${hotel.name}"></td>
+		<td th:text="${hotel.hotelType}"></td>
+		<td th:text="${hotel.email}"></td>
+		<td th:text="${hotel.mobile}"></td>
+
+
+		<td>
+			<button>
+				<a th:href="@{/hotel/update/{id} (id=${hotel.id})}">Edit</a>
+			</button>
+		</td>
+
+		<td>
+			<button>
+				<a th:href="@{/hotel/delete/{id} (id=${hotel.id})}">delete</a>
+			</button>
+		</td>
+
+	</tr>
+	</tbody>
+</table>
+
+</body>
+</html>
